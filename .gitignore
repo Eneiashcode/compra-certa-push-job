@@ -1,0 +1,4 @@
+# Evita subir chaves e arquivos sensíveis
+serviceAccountKey.json
+node_modules/
+.env

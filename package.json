@@ -1,0 +1,13 @@
+{
+  "name": "compra-certa-push-job",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "scripts/disparar-push.js",
+  "scripts": {
+    "start": "node scripts/disparar-push.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.10.1"
+  }
+}
