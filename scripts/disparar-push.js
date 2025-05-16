@@ -1,9 +1,8 @@
 import 'dotenv/config';
 import admin from 'firebase-admin';
-import fs from 'fs';
 
-// 🔐 Carrega chave da service account
-const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
+// 🔐 Carrega chave da service account via variável de ambiente
+const serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT_KEY);
 
 // 🔥 Inicializa Firebase Admin
 admin.initializeApp({
@@ -16,9 +15,7 @@ function deveDispararHoje() {
   const hoje = new Date();
   const dia = hoje.getDate();
   const diaSemana = hoje.getDay(); // 0 = domingo, 6 = sábado
-
   const diasEspecificos = [29, 30, 31, 1, 5, 10];
-
   return diaSemana === 0 || diaSemana === 6 || diasEspecificos.includes(dia);
 }
 
